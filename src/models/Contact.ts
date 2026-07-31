@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Connection } from 'mongoose';
 
 export interface IContact extends Document {
   fullName: string;
@@ -13,7 +13,7 @@ export interface IContact extends Document {
   updatedAt: Date;
 }
 
-const ContactSchema: Schema = new Schema(
+export const ContactSchema: Schema = new Schema(
   {
     fullName: {
       type: String,
@@ -50,6 +50,7 @@ const ContactSchema: Schema = new Schema(
   }
 );
 
-const Contact = mongoose.models.Contact || mongoose.model<IContact>('Contact', ContactSchema);
+export function getContactModel(connection: Connection) {
+  return connection.models.Contact || connection.model<IContact>('Contact', ContactSchema);
+}
 
-export default Contact;

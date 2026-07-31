@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import Contact from '@/models/Contact';
+import { getContactModel } from '@/models/Contact';
 import { dbConnect } from '@/lib/mongoose';
 
 export async function POST(request: Request) {
@@ -15,7 +15,8 @@ export async function POST(request: Request) {
       );
     }
 
-    await dbConnect();
+    const connection = await dbConnect('/contact');
+    const Contact = getContactModel(connection);
 
     const newContact = await Contact.create({
       fullName,

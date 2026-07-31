@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import Subscriber from '@/models/Subscriber';
+import { getSubscriberModel } from '@/models/Subscriber';
 import { dbConnect } from '@/lib/mongoose';
 
 export async function POST(request: Request) {
@@ -15,7 +15,8 @@ export async function POST(request: Request) {
       );
     }
 
-    await dbConnect();
+    const connection = await dbConnect('/subscriber');
+    const Subscriber = getSubscriberModel(connection);
 
     // Check if subscriber already exists
     const existingSubscriber = await Subscriber.findOne({ email });

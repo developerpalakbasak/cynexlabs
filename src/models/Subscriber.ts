@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document, Connection } from 'mongoose';
 
 export interface ISubscriber extends Document {
   email: string;
@@ -8,7 +8,7 @@ export interface ISubscriber extends Document {
   updatedAt: Date;
 }
 
-const SubscriberSchema: Schema = new Schema(
+export const SubscriberSchema: Schema = new Schema(
   {
     email: {
       type: String,
@@ -31,6 +31,6 @@ const SubscriberSchema: Schema = new Schema(
   }
 );
 
-const Subscriber = mongoose.models.Subscriber || mongoose.model<ISubscriber>('Subscriber', SubscriberSchema);
-
-export default Subscriber;
+export function getSubscriberModel(connection: Connection) {
+  return connection.models.Subscriber || connection.model<ISubscriber>('Subscriber', SubscriberSchema);
+}
