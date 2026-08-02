@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "CynexLabs — Your Business, Online & Growing",
     description: "We build websites, apps, and online stores that get results. No tech jargon. Just real growth for your business.",
     type: "website",
-    url: "https://cynexlabs.io",
+    url: "https://cynexlabs.com",
   },
   twitter: {
     card: "summary_large_image",

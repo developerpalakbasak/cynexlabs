@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
     return (
         <>
             <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-foreground/10 dark:bg-background/30 border-b border-foreground/20 dark:border-foreground/10">
-                <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10 py-4">
+                <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-10 py-2">
                     {/* Logo */}
                     <Link href="/" aria-label="Go to homepage" className="flex items-center gap-0 group">
                         <Image
@@ -61,13 +61,12 @@ const Navbar: React.FC = () => {
                             width={32}
                             height={32}
                             priority
-                            className="mr-[-2px]"
+                            className="w-6 h-6 lg:w-8 lg:h-8 mr-0.5"
                         />
-                        <span className="ml-1 text-lg font-semibold font-syne tracking-tight text-foreground group-hover:text-secondary transition-colors">
-                            ynexLabs
+                        <span className="ml-2 text-xl lg:text-2xl font-bold font-syne tracking-tight text-foreground group-hover:text-secondary transition-colors">
+                            CynexLabs
                         </span>
                     </Link>
-
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center gap-16">
                         <ul className="flex items-center md:gap-4">

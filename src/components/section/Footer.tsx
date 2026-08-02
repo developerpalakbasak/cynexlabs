@@ -61,32 +61,32 @@ const Footer: React.FC = () => {
       {/* Accent glow elements */}
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-4 md:px-10 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-4 sm:pb-16">
-          
+
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-6">
-            <Link 
-              href="/" 
-              className="flex items-center gap-0 group"
+            <span
+              className="inline-flex items-center gap-0 group"
             >
-              <Image 
-                src="/cynexlabs.svg" 
-                alt="CynexLabs logo" 
-                width={32} 
-                height={32} 
-                className="mr-[-2px]" 
+              <Image
+                src="/cynexlabs.svg"
+                alt="CynexLabs logo"
+                width={32}
+                height={32}
+                priority
+                className="w-6 h-6 lg:w-8 lg:h-8 mr-0.5"
               />
-              <span className="ml-1 text-lg font-semibold font-syne tracking-tight text-foreground group-hover:text-secondary transition-colors">
-                ynexLabs
+              <span className="ml-2 text-2xl font-bold font-syne tracking-tight text-foreground group-hover:text-secondary transition-colors">
+                CynexLabs
               </span>
-            </Link>
-            
+            </span>
+
             <p className="text-black dark:text-gray-400 font-space-grotesk text-sm max-w-sm leading-relaxed">
               We help businesses grow online with beautiful websites, mobile apps, online stores, and smart digital tools. You focus on your business — we handle the rest.
             </p>
-            
+
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-3 pt-2">
               <span className="text-[10px] uppercase font-bold text-black dark:text-gray-500 border border-foreground/10 bg-foreground/5 px-3 py-1.5 rounded-full flex items-center gap-1.5">
@@ -110,8 +110,8 @@ const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-4 text-sm font-space-grotesk text-black dark:text-gray-400">
                 <li>
-                  <Link 
-                    href="/#services" 
+                  <Link
+                    href="/#services"
                     onClick={(e) => handleScroll(e, "/#services")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -119,8 +119,8 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/#services" 
+                  <Link
+                    href="/#services"
                     onClick={(e) => handleScroll(e, "/#services")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -128,8 +128,8 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/#services" 
+                  <Link
+                    href="/#services"
                     onClick={(e) => handleScroll(e, "/#services")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -137,8 +137,8 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/#services" 
+                  <Link
+                    href="/#services"
                     onClick={(e) => handleScroll(e, "/#services")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -146,8 +146,8 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/#services" 
+                  <Link
+                    href="/#services"
                     onClick={(e) => handleScroll(e, "/#services")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -164,8 +164,8 @@ const Footer: React.FC = () => {
               </h4>
               <ul className="space-y-4 text-sm font-space-grotesk text-black dark:text-gray-400">
                 <li>
-                  <Link 
-                    href="/#results" 
+                  <Link
+                    href="/#results"
                     onClick={(e) => handleScroll(e, "/#results")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -173,8 +173,8 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/#pricing" 
+                  <Link
+                    href="/#pricing"
                     onClick={(e) => handleScroll(e, "/#pricing")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -182,8 +182,8 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/#reviews" 
+                  <Link
+                    href="/#reviews"
                     onClick={(e) => handleScroll(e, "/#reviews")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -191,8 +191,8 @@ const Footer: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link 
-                    href="/#contact" 
+                  <Link
+                    href="/#contact"
                     onClick={(e) => handleScroll(e, "/#contact")}
                     className="hover:text-secondary hover:underline transition-colors"
                   >
@@ -213,13 +213,13 @@ const Footer: React.FC = () => {
               Get practical tips on growing your business online, straight to your inbox. No spam, ever.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-3 relative">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={loading}
                 required
-                placeholder="architect@company.com" 
+                placeholder="architect@company.com"
                 className="w-full bg-foreground/5 border border-foreground/10 rounded-xl px-4 py-3 text-xs text-foreground placeholder:text-black dark:placeholder:text-gray-600 focus:outline-none focus:border-secondary transition-all disabled:opacity-50"
               />
               <Magnetic>
